@@ -49,7 +49,15 @@ function module:loadComponent()
         ["main-rectangle"] = dxCreateTexture("resources/images/ui/interface/main-rectangle.png", "dxt5", false, "clamp"),
     };
 
-    self.dxRenderInitialize = function() self:dxRender(); end
+    self.repositories =
+    {
+        interpolateService =
+        {
+
+        },
+    };
+
+    self.dxRenderInitialize= function() self:dxRender(); end
     addEventHandler("onClientRender", root, self.dxRenderInitialize);
 end
 
@@ -59,6 +67,11 @@ function module:dxRender()
 
     -- Wszystko co znajduje się poniżej ulegnie zmianie, testy na produkcji jak wygląda template wyprodykowany w grze.
     dxDrawImage(scalePositions["welcome-background"][1], scalePositions["welcome-background"][2], scalePositions["welcome-background"][3], scalePositions["welcome-background"][4], renderTextures["welcome-background"]);
+
+    local nowAlpha = getTickCount();
+    self.tickAlpha = getTickCount();
+    self.mainAlpha = interpolateBetween(255, 0, 0, 0, 0, 0, nowAlpha - self.tickAlpha / 620, "OutQuad");
+
 
     dxDrawImage(scalePositions["dark-editbox"][1], scalePositions["dark-editbox"][2], scalePositions["dark-editbox"][3], scalePositions["dark-editbox"][4], renderTextures["dark-editbox"]);
     dxDrawImage(scalePositions["board-filling"][1], scalePositions["board-filling"][2], scalePositions["board-filling"][3], scalePositions["board-filling"][4], renderTextures["board-filling"]);
