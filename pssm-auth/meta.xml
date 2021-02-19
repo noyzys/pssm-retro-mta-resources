@@ -1,0 +1,29 @@
+<!--
+    # resource module directory: io.github.noyzys/pssm-auth/resources/meta.xml
+    # resource author: noyzys
+    # resource for: Polski Serwer Służb Mundurowych, RETRO
+-->
+<meta>
+    <info author="nautchkafe-platform ::  noyzys"/>
+
+    <!-- pssm-auth/backend -->
+    <script src="backend/auth_module.lua" type="client" cache="false"/>
+
+    <!-- pssm-auth/backend/client -->
+    <script src="backend/client/auth_ui_component_client.lua" type="client" cache="false"/>
+
+    <!-- pssm-auth/backend/server -->
+
+    <!-- pssm-auth/backend/shared -->
+    <script src="backend/shared/auth_extension.lua" type="client"/>
+
+    <!-- pssm-auth/resources/... -->
+    <file src="resources/images/background/background.png"/>
+    <file src="resources/images/ui/interface/board-filling.png"/>
+    <file src="resources/images/ui/interface/dark-editbox.png"/>
+    <file src="resources/images/ui/interface/main-editbox.png"/>
+    <file src="resources/images/ui/interface/line-for-editbox.png"/>
+    <file src="resources/images/ui/interface/main-rectangle.png"/>
+
+    <oop>true</oop>
+</meta>
